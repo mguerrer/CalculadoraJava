@@ -1,7 +1,7 @@
 package cl.calculadora.java;
 
 /**
- * Hello world!
+ * Hola mundo!!!!!
  */
 public final class App {
     private App() {
