@@ -22,5 +22,7 @@ jobs:
         java-version: 1.8
     - name: Testing con Maven y Selenium
       run: mvn -B package --file pom.xml
-    - name: Generate test results
-      run: mvn surefire-report:report-only
+    - name: Publish Test Report
+      uses: scacap/action-surefire-report@v1
+      with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
