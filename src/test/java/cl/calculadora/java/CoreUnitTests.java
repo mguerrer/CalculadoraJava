@@ -1,10 +1,13 @@
 package cl.calculadora.java;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.TestInstance;
+import org.junit.jupiter.api.TestInstance.Lifecycle;
 
 /**
  * Unit test for simple App.
  */
+@TestInstance (Lifecycle.PER_CLASS)
 class CoreUnitTests {
     /**
      * Pruebas unitarias clase core.

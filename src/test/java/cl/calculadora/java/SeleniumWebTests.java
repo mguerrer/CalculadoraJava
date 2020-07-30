@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.JavascriptExecutor;
 import java.util.*;
 import java.net.MalformedURLException;
-//@TestInstance (Lifecycle.PER_CLASS)
+@TestInstance (Lifecycle.PER_CLASS)
 public class SeleniumWebTests {
   private WebDriver driver;
   JavascriptExecutor js;
