@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>Calculadora</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Suma5Mas7Igual12</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://www.calculadoraonline.org/<datalist><option>https://www.calculadoraonline.org/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='Clear  ']<datalist><option>//input[@value='Clear  ']</option><option>//main[@id='main']/div/div/div[2]/form/input[26]</option><option>//input[26]</option><option>css=input.clear</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value=' 7  ']<datalist><option>//input[@value=' 7  ']</option><option>//main[@id='main']/div/div/div[2]/form/input[2]</option><option>//input[2]</option><option>css=input.number</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='   +    ']<datalist><option>//input[@value='   +    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[23]</option><option>//input[23]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='    5    ']<datalist><option>//input[@value='    5    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[9]</option><option>//input[9]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=enter<datalist><option>name=enter</option><option>//input[@name='enter']</option><option>//main[@id='main']/div/div/div[2]/form/input[28]</option><option>//input[28]</option><option>css=input[name="enter"]</option></datalist></td><td></td>
+</tr>
+<tr><td>waitForValue</td><td>name=display<datalist><option>name=display</option><option>//input[@name='display']</option><option>//main[@id='main']/div/div/div[2]/form/input</option><option>//input</option><option>css=input[name="display"]</option></datalist></td><td>12</td>
+</tr>
+<tr><td>assertValue</td><td>name=display<datalist><option>name=display</option><option>//input[@name='display']</option><option>//main[@id='main']/div/div/div[2]/form/input</option><option>//input</option><option>css=input[name="display"]</option></datalist></td><td>12</td>
+</tr>
+<tr><td>close</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">DataDriven</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://www.calculadoraonline.org/<datalist><option>https://www.calculadoraonline.org/</option></datalist></td><td></td>
+</tr>
+<tr><td>loadVars</td><td>OperacionesBasicas.csv<datalist><option>data.csv</option><option>workplace-team.csv</option><option>OperacionesBasicas.csv</option><option>data2.csv</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='Clear  ']<datalist><option>//input[@value='Clear ']</option><option>//main[@id='main']/div/div/div[2]/form/input[26]</option><option>//input[26]</option><option>css=input.clear</option><option>//input[@value='Clear']</option><option>//input[@value='Clear  ']</option></datalist></td><td></td>
+</tr>
+<tr><td>echo</td><td>${x}<datalist><option>${Numero1}</option><option>${x}</option><option>${last}</option></datalist></td><td></td>
+</tr>
+<tr><td>storeEval</td><td>"//input[@value='    "+${x}+"    ']"<datalist><option>//input[@value=' 7 ']</option><option>//main[@id='main']/div/div/div[2]/form/input[2]</option><option>//input[2]</option><option>css=input.number</option><option>//input[@value=' ${Numero1} ']</option><option>//input[@value=' ${x} ']</option><option>"//input[@value=' "+${x}+" ']"</option><option>"//input[@value='"+${x}+"']"</option><option>"//input[@value='    "+${x}+"    ]"</option><option>"//input[@value='    "+${x}+"    ']"</option><option>"//input[@value='    "+${x}+"   ']"</option></datalist></td><td>xvalue</td>
+</tr>
+<tr><td>click</td><td>${xvalue}<datalist><option>//input[@value=' ${x} ']</option><option>//input[@value=' 7 ']</option><option>//main[@id='main']/div/div/div[2]/form/input[2]</option><option>//input[2]</option><option>css=input.number</option><option>//input[@value=' ${Numero1} ']</option><option>${tecla}</option><option>${xvalue}</option></datalist></td><td></td>
+</tr>
+<tr><td>storeEval</td><td>"//input[@value='   "+oper+"    ']"<datalist><option>//input[@value='   ÷    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[5]</option><option>//input[5]</option><option>css=input.operation</option><option>"//input[@value='   ÷    ']"</option><option>"//input[@value='   "+${oper}+"    ']"</option><option>"//input[@value='   "</option><option>//input[@value='   </option><option>//input[@value='   "</option><option>return "//input[@value='   ";</option><option>"//input[@value='   "+oper+" ']"</option><option>"//input[@value='   "+oper+"    ']"</option></datalist></td><td>op</td>
+</tr>
+<tr><td>echo</td><td>${op}<datalist><option>${tecla}</option><option>${op}</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>${op}<datalist><option>${tecla}</option><option>//input[@value=' ${x} ']</option><option>//input[@value=' 7 ']</option><option>//main[@id='main']/div/div/div[2]/form/input[2]</option><option>//input[2]</option><option>css=input.number</option><option>//input[@value=' ${Numero1} ']</option><option>${op}</option></datalist></td><td></td>
+</tr>
+<tr><td>storeEval</td><td>"//input[@value='    "+${y}+"    ']"<datalist><option>//input[@value=' 7 ']</option><option>//main[@id='main']/div/div/div[2]/form/input[2]</option><option>//input[2]</option><option>css=input.number</option><option>//input[@value=' ${Numero1} ']</option><option>//input[@value=' ${x} ']</option><option>"//input[@value=' "+${x}+" ']"</option><option>"//input[@value='"+${x}+"']"</option><option>"//input[@value=' "+${x}+" ]"</option><option>"//input[@value=' "+${x}+" ']"</option><option>"//input[@value='    "+${y}+"    ']"</option></datalist></td><td>tecla</td>
+</tr>
+<tr><td>click</td><td>${tecla}<datalist><option>${tecla}</option><option>//input[@value=' ${x} ']</option><option>//input[@value=' 7 ']</option><option>//main[@id='main']/div/div/div[2]/form/input[2]</option><option>//input[2]</option><option>css=input.number</option><option>//input[@value=' ${Numero1} ']</option></datalist></td><td></td>
+</tr>
+<tr><td>endLoadVars</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Multiplicacion5Por4Igual20</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://www.calculadoraonline.org/<datalist><option>https://www.calculadoraonline.org/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='Clear  ']<datalist><option>//input[@value='Clear  ']</option><option>//main[@id='main']/div/div/div[2]/form/input[26]</option><option>//input[26]</option><option>css=input.clear</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='    5    ']<datalist><option>//input[@value='    5    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[9]</option><option>//input[9]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='   ×   ']<datalist><option>//input[@value='   ×   ']</option><option>//main[@id='main']/div/div/div[2]/form/input[11]</option><option>//input[11]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='    4    ']<datalist><option>//input[@value='    4    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[8]</option><option>//input[8]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=enter<datalist><option>name=enter</option><option>//input[@name='enter']</option><option>//main[@id='main']/div/div/div[2]/form/input[28]</option><option>//input[28]</option><option>css=input[name="enter"]</option></datalist></td><td></td>
+</tr>
+<tr><td>waitForValue</td><td>name=display<datalist><option>name=display</option><option>//input[@name='display']</option><option>//main[@id='main']/div/div/div[2]/form/input</option><option>//input</option><option>css=input[name="display"]</option></datalist></td><td>20</td>
+</tr>
+<tr><td>close</td><td>win_ser_local<datalist><option>win_ser_local</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Division20Dividido5Igual4</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://www.calculadoraonline.org/<datalist><option>https://www.calculadoraonline.org/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//main[@id='main']/div/div/h1<datalist><option>//main[@id='main']/div/div/h1</option><option>//h1</option><option>css=h1</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='Clear  ']<datalist><option>//input[@value='Clear  ']</option><option>//main[@id='main']/div/div/div[2]/form/input[26]</option><option>//input[26]</option><option>css=input.clear</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='    2    ']<datalist><option>//input[@value='    2    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[15]</option><option>//input[15]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='    0    ']<datalist><option>//input[@value='    0    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[21]</option><option>//input[21]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='   ÷    ']<datalist><option>//input[@value='   ÷    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[5]</option><option>//input[5]</option><option>css=input.operation</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='    5    ']<datalist><option>//input[@value='    5    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[9]</option><option>//input[9]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=enter<datalist><option>name=enter</option><option>//input[@name='enter']</option><option>//main[@id='main']/div/div/div[2]/form/input[28]</option><option>//input[28]</option><option>css=input[name="enter"]</option></datalist></td><td></td>
+</tr>
+<tr><td>waitForValue</td><td>name=display<datalist><option>name=display</option><option>//input[@name='display']</option><option>//main[@id='main']/div/div/div[2]/form/input</option><option>//input</option><option>css=input[name="display"]</option></datalist></td><td>4</td>
+</tr>
+<tr><td>close</td><td>win_ser_local<datalist><option>win_ser_local</option></datalist></td><td></td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Resta7Menos2Igual5</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://www.calculadoraonline.org/<datalist><option>https://www.calculadoraonline.org/</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='Clear  ']<datalist><option>//input[@value='Clear  ']</option><option>//main[@id='main']/div/div/div[2]/form/input[26]</option><option>//input[26]</option><option>css=input.clear</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value=' 7  ']<datalist><option>//input[@value=' 7  ']</option><option>//main[@id='main']/div/div/div[2]/form/input[2]</option><option>//input[2]</option><option>css=input.number</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='   -    ']<datalist><option>//input[@value='   -    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[17]</option><option>//input[17]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>//input[@value='    5    ']<datalist><option>//input[@value='    5    ']</option><option>//main[@id='main']/div/div/div[2]/form/input[9]</option><option>//input[9]</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=enter<datalist><option>name=enter</option><option>//input[@name='enter']</option><option>//main[@id='main']/div/div/div[2]/form/input[28]</option><option>//input[28]</option><option>css=input[name="enter"]</option></datalist></td><td></td>
+</tr>
+<tr><td>waitForValue</td><td>name=display<datalist><option>name=display</option><option>//input[@name='display']</option><option>//main[@id='main']/div/div/div[2]/form/input</option><option>//input</option><option>css=input[name="display"]</option></datalist></td><td>2</td>
+</tr>
+<tr><td>close</td><td><datalist><option></option></datalist></td><td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
